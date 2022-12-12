@@ -8,26 +8,12 @@
 // all'interno della classe è definito almeno un metodo
 // vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà
 
-class Movie
-{
 
-    public $title;
-    public $description;
-    public $vote;
-    public $lenguage;
-    public $film_company;
+include __DIR__ . '/components/genre.php';
+include __DIR__ . '/components/movie.php';
 
-    public function __construct($title, $description, $vote, $lenguage, $film_company)
-    {
-        $this->title = $title;
-        $this->description = $description;
-        $this->vote = $vote;
-        $this->lenguage = $lenguage;
-        $this->film_company = $film_company;
-    }
-}
-
-$Il_signore_degli_anelli = new Movie('Il signore delgi anelli', 'Tutto ebbe inizio...', '5', 'IT', 'New Line Cinema');
+$Il_signore_degli_anelli = new Movie('Il signore delgi anelli', new Genre('Fantasy'), 'IT', 'IL giorno in cui tutto ebbe inizio');
 var_dump($Il_signore_degli_anelli);
-$El_camino = new Movie('El Camino', 'Tratto da una storia vera', '5', 'EN', 'Sony Pictures');
+
+$El_camino = new Movie('El Camino', new Genre('Action'), 'EN', 'Tratto da una storia vera');
 var_dump($El_camino);
